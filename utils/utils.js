@@ -1,3 +1,8 @@
-module.exports.add = (a, b) => a + b;
+let add = (a, b) => a + b;
 
-module.exports.square = (x) => x * x;
+let square = (x) => x * x;
+
+module.exports = {
+    add,
+    square
+};
