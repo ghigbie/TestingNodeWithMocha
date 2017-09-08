@@ -31,3 +31,17 @@ it('should contain a specified value', () => {
     let numberArray = [1, 2, 3, 4, 9];
     expect(numberArray).toInclude(4); 
 });
+
+it('should contain a value', () => {
+    let person = {
+        name: 'Bubba',
+        age: 25,
+        location: 'Hilo, HI'
+    };
+    expect(person).toInclude({
+        age: 25
+    });
+    expect(person).toExclude({
+        age: 21
+    });
+});
