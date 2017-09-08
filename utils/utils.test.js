@@ -45,3 +45,20 @@ it('should contain a value', () => {
         age: 21
     });
 });
+
+it('should verify two name values are set', () => {
+    let user = utils.setName({}, "Mike Sans");
+    expect(user).toBeAn('object');
+    expect(user.firstName).toEqual('Mike').toBeA('string');
+    expect(user.lastName).toEqual('Sans').toBeA('string');
+});
+
+it('should return an object with a firstName value', () => {
+    let user = utils.setName({}, 'Sammy Davis');
+    expect(user.firstName).toEqual('Sammy').toBeA('string');
+});
+
+it('should return an object with a lastName value', () => {
+    let user = utils.setName({}, 'Gilberto Gil');
+    expect(user.lastName).toEqual('Gil').toBeA('string');
+});
