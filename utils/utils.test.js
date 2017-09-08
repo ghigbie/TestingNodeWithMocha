@@ -62,3 +62,14 @@ it('should return an object with a lastName value', () => {
     let user = utils.setName({}, 'Gilberto Gil');
     expect(user.lastName).toEqual('Gil').toBeA('string');
 });
+
+it('should include two names', () => {
+    let user = {location: 'Houston', age: '25'};
+    let res = utils.setName(user, 'Bubba Park');
+    expect(res).toInclude({
+        location: 'Houston',
+        age: 25,
+        firstName: 'Bubba',
+        lastName: 'Park'
+    });
+});
