@@ -26,3 +26,8 @@ it('should expect some values', () => {
 it('should expect some values', () => {
     expect('Bubba').toEqual('Bubba'); 
 });
+
+it('should contain a specified value', () => {
+    let numberArray = [1, 2, 3, 4, 9];
+    expect(numberArray).toInclude(4); 
+});
