@@ -10,13 +10,13 @@ let setName = (user, fullName) => {
 
 let asyncAdd = (a, b, callback) => {
     setTimeout(() => {
-        return a + b;
+        callback(a + b)
     }, 1000);
 };
 
 let asyncSquare = (a, callback) => {
     setTimeout(() => {
-        return a * a;
+        callback(a * a);
     }, 1500);
 };
 
