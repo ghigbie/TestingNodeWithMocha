@@ -20,11 +20,18 @@ let asyncSquare = (a, callback) => {
     }, 1500);
 };
 
+let asyncMultiply = (a, b, callback) => {
+    setTimeout(() => {
+        callback(a * b);
+    }, 1750);
+};
+
 module.exports = {
     add,
     square,
     subtract,
     setName,
     asyncAdd,
-    asyncSquare
+    asyncSquare, 
+    asyncMultiply
 };

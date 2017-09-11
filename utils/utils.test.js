@@ -63,7 +63,19 @@ it('should return an object with a lastName value', () => {
     expect(user.lastName).toEqual('Gil').toBeA('string');
 });
 
-//Async testing
+it('should include two names', () => {
+    let user = {location: 'Houston', age: '25'};
+    let res = utils.setName(user, 'Bubba Park');
+    expect(res).toInclude({
+        location: 'Houston',
+        age: 25,
+        firstName: 'Bubba',
+        lastName: 'Park'
+    });
+});
+
+//async testing
+
 
 it('should async add two numbers', (done) => { //"done" is an argument that allows mocha to do async testing
     utils.asyncAdd(4, 6, (sum) => {
@@ -79,13 +91,9 @@ it('should async square a number', (done) => {
     });
 });
 
-it('should include two names', () => {
-    let user = {location: 'Houston', age: '25'};
-    let res = utils.setName(user, 'Bubba Park');
-    expect(res).toInclude({
-        location: 'Houston',
-        age: 25,
-        firstName: 'Bubba',
-        lastName: 'Park'
-    });
+it('should asyn multiply two numbers', (done) => {
+   utils.asyncMultiply(5, 7, (product) => {
+       expect(product).toBe(40).toBeA('number');
+       done();
+   });
 });
