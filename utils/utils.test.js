@@ -68,12 +68,14 @@ it('should return an object with a lastName value', () => {
 it('should async add two numbers', (done) => { //"done" is an argument that allows mocha to do async testing
     utils.asyncAdd(4, 6, (sum) => {
         expect(sum).toBe(10).toBeA('number');
+        done();
     });
 });
 
 it('should async square a number', (done) => {
     utils.asyncSquare(4, (product) => {
         expect(product).toBe(16).toBeA('number');
+        done();
     });
 });
 
