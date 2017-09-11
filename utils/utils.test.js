@@ -63,15 +63,15 @@ it('should return an object with a lastName value', () => {
     expect(user.lastName).toEqual('Gil').toBeA('string');
 });
 
-console.log("////////////////////////////////")
+//Async testing
 
-it('should async add two numbers', () => {
+it('should async add two numbers', (done) => { //"done" is an argument that allows mocha to do async testing
     utils.asyncAdd(4, 6, (sum) => {
         expect(sum).toBe(10).toBeA('number');
     });
 });
 
-it('should async square a number', () => {
+it('should async square a number', (done) => {
     utils.asyncSquare(4, (product) => {
         expect(product).toBe(16).toBeA('number');
     });
