@@ -8,9 +8,22 @@ let setName = (user, fullName) => {
     return user;
 };
 
+let asyncAdd = (a, b, callback) => {
+    setTimeout(() => {
+        return a + b;
+    }, 1000);
+};
+
+let asyncSquare = (a, callback) => {
+    setTimeout(() => {
+        return a * a;
+    }, 1500);
+};
+
 module.exports = {
     add,
     square,
     subtract,
-    setName
+    setName,
+    asyncAdd
 };
