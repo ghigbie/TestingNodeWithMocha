@@ -4,6 +4,7 @@
   "description": "This repo is dedicated to practicing testing node applications with Mocha.",
   "main": "app.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "mocha **/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },
