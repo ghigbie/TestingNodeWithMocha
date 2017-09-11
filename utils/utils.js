@@ -23,7 +23,7 @@ let asyncSquare = (a, callback) => {
 let asyncMultiply = (a, b, callback) => {
     setTimeout(() => {
         callback(a * b);
-    }, 1750);
+    }, 1600);
 };
 
 module.exports = {

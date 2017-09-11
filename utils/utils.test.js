@@ -91,9 +91,9 @@ it('should async square a number', (done) => {
     });
 });
 
-it('should asyn multiply two numbers', (done) => {
+it('should async multiply two numbers', (done) => {
    utils.asyncMultiply(5, 7, (product) => {
-       expect(product).toBe(40).toBeA('number');
+       expect(product).toBe(35).toBeA('number');
        done();
    });
 });
