@@ -10,7 +10,7 @@ let setName = (user, fullName) => {
 
 let asyncAdd = (a, b, callback) => {
     setTimeout(() => {
-        callback(a + b)
+        callback(a + b);
     }, 1000);
 };
 
@@ -25,5 +25,6 @@ module.exports = {
     square,
     subtract,
     setName,
-    asyncAdd
+    asyncAdd,
+    asyncSquare
 };

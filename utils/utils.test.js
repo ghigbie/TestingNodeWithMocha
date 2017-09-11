@@ -63,6 +63,20 @@ it('should return an object with a lastName value', () => {
     expect(user.lastName).toEqual('Gil').toBeA('string');
 });
 
+console.log("////////////////////////////////")
+
+it('should async add two numbers', () => {
+    utils.asyncAdd(4, 6, (sum) => {
+        expect(sum).toBe(10).toBeA('number');
+    });
+});
+
+it('should async square a number', () => {
+    utils.asyncSquare(4, (product) => {
+        expect(product).toBe(16).toBeA('number');
+    });
+});
+
 it('should include two names', () => {
     let user = {location: 'Houston', age: '25'};
     let res = utils.setName(user, 'Bubba Park');
