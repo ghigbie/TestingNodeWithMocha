@@ -6,7 +6,14 @@ let IP = process.env.IP;
 
 app.get('/', (req, res) => {
     console.log('The root route is called');
-    res.send('Welcome to the root');
+    res.status(200).send('Welcome to the root');
+});
+
+app.get('/wait', (req, res) => {
+    console.log('The fail path was called');
+    res.status(404).send({
+       error: 'Page not found.' 
+    });
 });
 
 app.listen(PORT, IP, () => {
