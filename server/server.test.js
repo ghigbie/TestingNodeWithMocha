@@ -15,7 +15,7 @@ it('should return a json with an error message', (done) => {
         .get('/fail')
         .expect(404)
         .expect({
-            error: 'Page not found.'
+            error: 'Page not found.' 
         })
         .end(done);
 });

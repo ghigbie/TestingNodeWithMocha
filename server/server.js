@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     res.status(200).send('Welcome to the root');
 });
 
-app.get('/wait', (req, res) => {
+app.get('/fail', (req, res) => {
     console.log('The fail path was called');
     res.status(404).send({
        error: 'Page not found.' 
