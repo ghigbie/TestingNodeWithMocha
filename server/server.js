@@ -16,6 +16,14 @@ app.get('/fail', (req, res) => {
     });
 });
 
+app.get('/newTry', (req, res) => {
+    console.log('The newTry path was called');
+    res.status(404).send({
+       error: 'Page not found',
+       name: 'Some App v1.0'
+    });
+});
+
 app.listen(PORT, IP, () => {
    console.log(`The server is listening on port ${PORT}.`); 
 });
