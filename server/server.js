@@ -24,6 +24,11 @@ app.get('/newTry', (req, res) => {
     });
 });
 
+app.get('/moo', (req, res) => {
+   console.log('The moo path was called');
+   res.status(200).send('<h1>This is the home of the cow</h1>');
+});
+
 app.listen(PORT, IP, () => {
    console.log(`The server is listening on port ${PORT}.`); 
 });
