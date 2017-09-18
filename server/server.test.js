@@ -4,12 +4,15 @@ const expect = require('expect');
 let app = require('./server').app;
 
 describe('Express testing', () => {
-    it('should return a Welcome to the root response', (done) => {
-        request(app)
-            .get('/')
-            .expect(200)
-            .expect('Welcome to the root')
-            .end(done);
+    
+    describe('root', () => {
+        it('should return a Welcome to the root response', (done) => {
+            request(app)
+                .get('/')
+                .expect(200)
+                .expect('Welcome to the root')
+                .end(done);
+        });
     });
     
     it('should return an object with an error message', (done) => {
@@ -41,28 +44,32 @@ describe('Express testing', () => {
             .end(done);
     });
     
-    it('should return an object response reflective of a cat', (done) => {
-        request(app)
-            .get('/meow')
-            .expect(404)
-            .expect((res) => {
-                expect(res.body).toInclude({
-                    error: 'No cat here'
-                });
-            })
-            .end(done);
-    }); 
+    describe('/meow', () => {
+        it('should return an object response reflective of a cat', (done) => {
+            request(app)
+                .get('/meow')
+                .expect(404)
+                .expect((res) => {
+                    expect(res.body).toInclude({
+                        error: 'No cat here'
+                    });
+                })
+                .end(done);
+        }); 
+    });
     
-    it('should return a specific user object', (done) => {
-        request(app)
-            .get('/users')
-            .expect(200)
-            .expect((res) => {
-                expect(res.body).toInclude({
-                    name: 'Mr. Duck',
-                    age: 23
-                });
-            })
-            .end(done);
+    describe('/users', () =>{
+        it('should return a specific user object', (done) => {
+            request(app)
+                .get('/users')
+                .expect(200)
+                .expect((res) => {
+                    expect(res.body).toInclude({
+                        name: 'Mr. Duck',
+                        age: 23
+                    });
+                })
+                .end(done);
+        });
     });
 });
