@@ -6,15 +6,20 @@ const utils = require('./utils');
 
 describe('Utils - Sync', () => {
     
-    it('should add two numbers', () => {
-        let res = utils.add(33, 11);
-        expect(res).toBe(44).toBeA('number');
+    describe('#add', () => {
+        it('should add two numbers', () => {
+            let res = utils.add(33, 11);
+            expect(res).toBe(44).toBeA('number');
+        });
     });
     
-    it('should sqaure a number', () => {
-        let  res = utils.square(7);
-        expect(res).toBe(49).toBeA('number');
+    describe('#square', () => {
+        it('should sqaure a number', () => {
+            let  res = utils.square(7);
+            expect(res).toBe(49).toBeA('number');
+        });
     });
+
     //to be uses 
     it('should subtract a number', () => {
         let res = utils.subtract(5,3);
