@@ -39,3 +39,28 @@ it('should return a \'<h1>This is the home of the cow</h1>\' response', (done) =
         .expect('<h1>This is the home of the cow</h1>')
         .end(done);
 });
+
+it('should return an object response reflective of a cat', (done) => {
+    request(app)
+        .get('/meow')
+        .expect(404)
+        .expect((res) => {
+            expect(res.body).toInclude({
+                error: 'No cat here'
+            });
+        })
+        .end(done);
+}); 
+
+it('should return a specific user object', (done) => {
+    request(app)
+        .get('/users')
+        .expect(200)
+        .expect((res) => {
+            expect(res.body).toInclude({
+                name: 'Mr. Duck',
+                age: 23
+            });
+        })
+        .end(done);
+});
