@@ -3,7 +3,7 @@ const expect = require('expect');
 
 let app = require('./server').app;
 
-describe('Express testing', () => {
+describe('Express server testing', () => {
     
     describe('root', () => {
         it('should return a Welcome to the root response', (done) => {
