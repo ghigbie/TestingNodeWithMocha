@@ -31,3 +31,11 @@ it('should return an object with an error message', (done) => {
         })
         .end(done);
 });
+
+it('should return a \'<h1>This is the home of the cow</h1>\' response', (done) => {
+    request(app)
+        .get('/moo')
+        .expect(200)
+        .expect('<h1>This is the home of the cow</h1>')
+        .end(done);
+});
