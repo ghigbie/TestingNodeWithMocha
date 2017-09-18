@@ -28,6 +28,13 @@ app.get('/moo', (req, res) => {
    console.log('The moo path was called');
    res.status(200).send('<h1>This is the home of the cow</h1>');
 });
+app.get('./meow', (req, res) => {
+   console.log('The meow path was called');
+   res.status(404).send({
+       error: 'No cat here',
+       name: 'Meow'
+   });
+});
 
 app.listen(PORT, IP, () => {
    console.log(`The server is listening on port ${PORT}.`); 
